@@ -1,0 +1,20 @@
+{
+  "name": "mcpts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --target ES5 --experimentalDecorators"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.1",
+    "install": "^0.13.0",
+    "npm": "^11.5.2"
+  }
+}
