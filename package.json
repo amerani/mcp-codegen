@@ -1,20 +1,31 @@
 {
-  "name": "mcpts",
-  "version": "1.0.0",
+  "name": "mcp-codegen",
+  "version": "0.0.5-beta",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --target ES5 --experimentalDecorators"
+    "build": "tsc --target ES5 --experimentalDecorators",
+    "dev": "tsc --watch src/**/*.ts --outDir dist --experimentalDecorators",
+    "start": "node dist/examples/server.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "@modelcontextprotocol/sdk": "^1.17.1",
+    "express": "^5.1.0",
+    "install": "^0.13.0",
+    "npm": "^11.5.2",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.24.1"
+  },
+  "peerDependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.1",
+    "zod": "^3.23.8"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.17.1",
-    "install": "^0.13.0",
-    "npm": "^11.5.2"
+    "reflect-metadata": "^0.2.2"
   }
 }
