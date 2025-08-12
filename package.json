@@ -12,7 +12,6 @@
     "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "build:all": "npm run build && npm run build:types",
     "dev": "esbuild src/index.ts --bundle --platform=node --target=es2015 --outfile=dist/index.js --format=cjs --external:reflect-metadata --external:zod --external:zod-to-json-schema --external:@modelcontextprotocol/sdk --watch",
-    "start": "node dist/examples/server.js",
     "prepublishOnly": "npm run build:all"
   },
   "author": "",

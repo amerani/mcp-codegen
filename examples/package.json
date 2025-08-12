@@ -1,0 +1,22 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mcp-codegen": "^0.0.6-beta",
+    "@modelcontextprotocol/sdk": "^1.17.1",
+    "@types/express": "^5.0.3",
+    "esbuild": "^0.20.2",
+    "express": "^5.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.24.1"
+  }
+}

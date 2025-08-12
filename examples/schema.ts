@@ -2,7 +2,7 @@ import {
       McpRequired, 
       McpOptional, 
       Format 
-} from "../lib/decorators";
+} from "mcp-codegen";
 
 export class ToolCallInput {
 	im_just_a_prop: string;

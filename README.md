@@ -2,31 +2,6 @@
 
 The official MCP TypeScript SDK requires modeling MCP Tool Schema using a type-system called [Zod](https://zod.dev/). `mcp-codegen` allows you to leverage plain-old-TypeScript-objects.
 
-## Installation
-
-```bash
-npm install mcp-codegen
-```
-
-## Build
-
-This package is built using esbuild to transpile TypeScript to ES2015 (ES6) for broad compatibility. The build process generates both JavaScript and TypeScript declaration files.
-
-```bash
-npm run build:all
-``` 
-
-## Exports
-
-The package exports the following components:
-
-- `McpRequired()` - Decorator for required fields
-- `McpOptional()` - Decorator for optional fields  
-- `Format(format: string)` - Decorator for field format specification
-- `SchemaBuilder` - Function to generate Zod schema from decorated classes
-- `Primitives` - TypeScript type for primitive values
-- `ZOD_METADATA`, `ZOD_PROPS` - Internal constants
-
 ## Dependencies
 
 1. TypeScript experimental decorators (legacy only, TC39 coming soon)
@@ -34,6 +9,42 @@ The package exports the following components:
 1. [Zod to JSON Schema](https://github.com/StefanTerdell/zod-to-json-schema) (Zod4 coming soon)
 
 ## Getting Started
+
+### Installation
+
+```bash
+npm install mcp-codegen
+```
+
+### Development
+
+This package is built using esbuild to transpile TypeScript to ES2015 (ES6) for broad compatibility. The build process generates both JavaScript and TypeScript declaration files.
+
+```bash
+npm run build:all
+``` 
+
+### Testing
+
+This package is consumed in the examples directory with the latest beta version published on npm. A developer tool like [MCP Inspector](https://github.com/modelcontextprotocol/inspector) can be used to test the example server (Integration tests coming soon)
+
+```bash
+cd examples
+npm start
+
+npx @modelcontextprotocol/inspector
+```
+
+### Exports
+
+The package exports the following components:
+
+- `McpRequired()` - Decorator for required fields
+- `McpOptional()` - Decorator for optional fields  
+- `Format(format: string)` - Decorator for field format specification
+- `SchemaBuilder` - Function to generate Zod schema from decorated classes
+
+## Tutorial
 
 ### Decorate TypeScript Class
 Build MCP Tool schema using TypeScript classes and decorators.
@@ -76,7 +87,7 @@ const zodObject = SchemaBuilder(ToolCallInput);
 const jsonSchema = zodToJsonSchema(z.object(zodObject));
 ```
 
-#### Generated JSON Schema
+#### Generated JSON Schema Output
 
 ```json
 {
