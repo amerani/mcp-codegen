@@ -1,23 +1,31 @@
 {
   "name": "mcp-codegen",
-  "version": "0.0.5-beta",
+  "version": "0.0.6-beta",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc --target ES5 --experimentalDecorators",
-    "dev": "tsc --watch src/**/*.ts --outDir dist --experimentalDecorators",
-    "start": "node dist/examples/server.js"
+    "build": "esbuild src/index.ts --bundle --platform=node --target=es2015 --outfile=dist/index.js --format=cjs --external:reflect-metadata --external:zod --external:zod-to-json-schema --external:@modelcontextprotocol/sdk",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "build:all": "npm run build && npm run build:types",
+    "dev": "esbuild src/index.ts --bundle --platform=node --target=es2015 --outfile=dist/index.js --format=cjs --external:reflect-metadata --external:zod --external:zod-to-json-schema --external:@modelcontextprotocol/sdk --watch",
+    "start": "node dist/examples/server.js",
+    "prepublishOnly": "npm run build:all"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/express": "^5.0.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.2",
     "@modelcontextprotocol/sdk": "^1.17.1",
+    "@types/express": "^5.0.3",
+    "esbuild": "^0.20.2",
     "express": "^5.1.0",
     "install": "^0.13.0",
     "npm": "^11.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
     "zod": "^3.23.8",
     "zod-to-json-schema": "^3.24.1"
   },

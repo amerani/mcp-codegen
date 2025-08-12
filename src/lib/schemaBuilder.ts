@@ -1,7 +1,7 @@
 import { ZOD_PROPS, ZOD_METADATA } from "./constants";
 import { zodFormat, zodType } from "./schemaMapper";
 
-function getSchema(Type: { new() }) {
+function SchemaBuilder(Type: { new() }) {
 	const input = new Type();
 	const output = {};
 	Object.keys(Reflect.getMetadata(ZOD_PROPS, input)).forEach(field => {
@@ -24,4 +24,4 @@ function getSchema(Type: { new() }) {
 	return output;
 }
 
-export default getSchema
+export default SchemaBuilder

@@ -12,9 +12,27 @@
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
       "jsx": "react",
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "strict": false,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitAny": false,
+      "noImplicitReturns": false,
+      "noImplicitThis": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false
   },
+  "include": [
+      "src/lib/**/*",
+      "src/index.ts"
+  ],
   "exclude": [
-      "**/*.test.ts"
+      "**/*.test.ts",
+      "dist",
+      "node_modules"
   ],
   "types": ["node", "reflect-metadata"]
 }

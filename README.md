@@ -1,6 +1,31 @@
 # mcp-codegen
 
-The official MCP TypeScript SDK requires modeling MCP Tool Schema using a type-system called [Zod](https://zod.dev/). `mcp-codegen` allows you to leverage plain-old-TypeScript-objects. 
+The official MCP TypeScript SDK requires modeling MCP Tool Schema using a type-system called [Zod](https://zod.dev/). `mcp-codegen` allows you to leverage plain-old-TypeScript-objects.
+
+## Installation
+
+```bash
+npm install mcp-codegen
+```
+
+## Build
+
+This package is built using esbuild to transpile TypeScript to ES2015 (ES6) for broad compatibility. The build process generates both JavaScript and TypeScript declaration files.
+
+```bash
+npm run build:all
+``` 
+
+## Exports
+
+The package exports the following components:
+
+- `McpRequired()` - Decorator for required fields
+- `McpOptional()` - Decorator for optional fields  
+- `Format(format: string)` - Decorator for field format specification
+- `SchemaBuilder` - Function to generate Zod schema from decorated classes
+- `Primitives` - TypeScript type for primitive values
+- `ZOD_METADATA`, `ZOD_PROPS` - Internal constants
 
 ## Dependencies
 
